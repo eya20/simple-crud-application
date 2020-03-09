@@ -1,0 +1,39 @@
+@media screen and (max-width: 400px)  {
+    .table tr {
+       width: 80%;
+    }
+    .table {
+        width: 316px;
+    }
+    .container {
+        background-color: white;
+        border-radius: 10px;
+        height: 75%;
+        position:relative; 
+        top:0px; 
+        overflow: scroll;
+    }
+}
+
+body{
+    background-image: url("../bk.jpg") ; 
+   
+    background-size: 100% auto;
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
+    -o-background-size: 100% auto;;
+}
+.container {
+    background-color: white;
+    border-radius: 10px;
+    height: 75%;
+    position:relative; 
+    top:50px; 
+    overflow: scroll;
+}
+#title {
+    font-family: Georgia, serif;
+   }
+.cookie{
+   text-align: center;
+}

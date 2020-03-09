@@ -1,0 +1,18 @@
+#adduser{
+
+    position: relative;
+    left: auto;
+    top: 150px;
+    width: 30%;
+    background-color: #fddcd7;
+}
+#fname{
+    width: 70%;
+}
+#lname{
+    width: 70%;
+}
+.field{
+    position: relative;
+    left: 20px;
+}
