@@ -29,7 +29,7 @@
 <body style="font-family: sans-serif; "> 
       <div class="container" >
         <br><br><h1 id="title">List of Users</h1><br>
-        <a href="index.html" class="btn btn-success col-5 col-lg-2 col-md-3 col-sm-4"> Add new User </a> <br><br>
+        <a href="index.html.php" class="btn btn-success col-5 col-lg-2 col-md-3 col-sm-4"> Add new User </a> <br><br>
       <table class="table" > 
             <tr class="thead-light ">
                 <th scope="col ">#</th>
@@ -44,7 +44,9 @@
                     <td><?php echo $user['firstname']; ?></td>
                     <td><?php  echo $user['lastname']; ?></td>
                     <td> <a href="../delete.php?id=<?php echo $user['id']; ?>" onclick="return window.confirm(`Are you sure to delete this User ?!`)" ><i class="material-icons" onclick="return window.confirm(`Are you sure to delete this User ?!`)">restore_from_trash</i></a>
-                    <a href="edit.html.php?id=<?php echo $user['id']; ?> "><i class="material-icons">edit</i></a> </td>
+                    <a href="edit.html.php?id=<?php echo $user['id']; ?> "><i class="material-icons">edit</i></a>
+                    <a href="details.html.php?id=<?php echo $user['id']; ?> "><i class="material-icons">assignment</i>
+                </td>
             </tr>
             <?php endforeach; ?>
         </table>

@@ -1,40 +1,51 @@
+<?php
+session_start();
+if (isset($_SESSION['fail'])){
+	echo "<div style='width:20%; 
+    position:relative; 
+    left:500px;
+    background-color:#CD5C5C; 
+    color:white;
+    border-radius: 3px;
+	padding-left: 8px;'; 
+	class='alert alert-danger' id='hiden'>"; echo $_SESSION['fail']['message']; echo"</div>";
+	unset($_SESSION['fail']);
+}	
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<title>Add new user</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
-<!--===============================================================================================-->
+	<!--===============================================================================================-->	
+		<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+	<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="css/util.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+	<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+	<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+	<!--===============================================================================================-->	
+		<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+	<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="css/util.css">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+		rel="stylesheet">
+	<!--===============================================================================================-->
 </head>
 <body style="font-family: sans-serif; background-image: url('bk.jpg');"> 
 	
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<form action="../addUser.php" method="POST" class="login100-form validate-form">
+				<form action="../addUser.php" method="POST" class="login100-form validate-form" enctype="multipart/form-data">
 					<span style="font-family: Georgia, serif;" class="login100-form-title p-b-26">
 						Add New User 
 					</span>
@@ -61,6 +72,12 @@
 						<input class="input100" type="text" name="cin" id="cin" required="required" onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="8">
 						<span class="focus-input100" data-placeholder="cin"></span>
 					</div>
+					
+					<div class="custom-file" >
+						<input class="input100" type="file" name="photo" id="photo" required="required" placeholder="Select File .." >
+						
+					</div>
+			
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
@@ -72,6 +89,7 @@
 							arrow_back
 							</i></a>
 					</div>
+					
 
 					
 				</form>
@@ -98,6 +116,11 @@
 	<script src="vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
+	<!-- hide message of error upload photo -->
+<script type="text/javascript">
+setTimeout(function(){ document.getElementById('hiden').style.display = 'none';
+}, 2000);
+</script>
 
 </body>
 </html>
