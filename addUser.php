@@ -17,7 +17,8 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
         }
         if(file_exists($target_file)) 
         {  
-            $target_file = $target_dir.basename($first.".".$imageFileType);
+            $target_file = $target_dir.basename($first.$last.".".$imageFileType);
+            $photo = $first.$last.".".$imageFileType;
         } 
             if ($uploadOk === 1){
                 if (move_uploaded_file($_FILES["photo"]["tmp_name"], $target_file)) {
